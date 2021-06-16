@@ -114,6 +114,11 @@ export type BottomSheetProps = {
    * @type (fromIndex: number, toIndex: number) => void;
    */
   onAnimate?: (fromIndex: number, toIndex: number) => void;
+   /**
+   * Callback during a pan event.
+   * @type (ev: any) => void;
+   */
+  onPan?: (ev: any) => void;
 
   // components
   /**

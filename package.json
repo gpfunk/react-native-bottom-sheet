@@ -1,5 +1,5 @@
 {
-  "name": "@gorhom/bottom-sheet",
+  "name": "@gpfunk/bottom-sheet",
   "version": "2.3.0",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
@@ -20,11 +20,11 @@
     "sheet",
     "modal"
   ],
-  "repository": "https://github.com/gorhom/react-native-bottom-sheet",
-  "author": "Mo Gorhom (https://gorhom.dev)",
+  "repository": "https://github.com/gpfunk/react-native-bottom-sheet",
+  "author": "Graeme Funk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gorhom/react-native-bottom-sheet/issues"
+    "url": "https://github.com/gpfunk/react-native-bottom-sheet/issues"
   },
   "homepage": "https://gorhom.github.io/react-native-bottom-sheet",
   "scripts": {
@@ -76,7 +76,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typescript"
+      "pre-commit": "yarn typescript"
     }
   },
   "@react-native-community/bob": {

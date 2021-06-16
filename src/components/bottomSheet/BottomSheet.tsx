@@ -107,6 +107,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       // callbacks
       onChange: _providedOnChange,
       onAnimate: _providedOnAnimate,
+      onPan: _providedOnPan,
 
       // components
       handleComponent,
@@ -215,6 +216,17 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       velocity: { y: handlePanGestureVelocityY },
       gestureHandler: handlePanGestureHandler,
     } = usePanGestureHandler();
+
+    // wrapper to pass pan event to the calling fn if provided
+    const onPanGestureHandler = (ev: any) => {
+      if (_providedOnPan) {
+        _providedOnPan(ev);
+      }
+
+      // call the callbacks
+      handlePanGestureHandler.onGestureEvent(ev);
+    };
+
     const {
       state: contentPanGestureState,
       translation: { y: contentPanGestureTranslationY },
@@ -653,6 +665,8 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
                   handleComponent={handleComponent}
                   onMeasureHeight={handleOnHandleMeasureHeight}
                   {...handlePanGestureHandler}
+                  // overwrite this to allow for passing back to calling fn
+                  onGestureEvent={onPanGestureHandler}
                 />
                 <Animated.View
                   pointerEvents="box-none"
