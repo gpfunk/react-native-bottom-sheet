@@ -1,5 +1,5 @@
 {
-  "name": "@gpfunk/bottom-sheet",
+  "name": "gpfunk-bottom-sheet",
   "version": "2.4.0",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
