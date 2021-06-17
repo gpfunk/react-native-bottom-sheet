@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.4.5](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.4...v2.4.5)
+## [v2.4.6](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.5...v2.4.6)
+
+#### Fixes
+
+- fix: switch to using the animated position ([28e39cb](https://github.com/gpfunk/react-native-bottom-sheet/commit/28e39cb999fa6116c5ad8cd80ea90778f2821fa0)).
+
+## [v2.4.5](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.4...v2.4.5) - 2021-06-17
 
 #### Fixes
 
