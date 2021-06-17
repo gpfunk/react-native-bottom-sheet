@@ -1,6 +1,13 @@
 # Changelog
 
-## [v2.4.0](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.3.0...v2.4.0)
+## [v2.4.1](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.0...v2.4.1)
+
+#### Fixes
+
+- fix: try this ([d080dae](https://github.com/gpfunk/react-native-bottom-sheet/commit/d080daecaa3376bc36043da7982cc7f88a6b2360)).
+- fix: update name so not private package ([d1ecb18](https://github.com/gpfunk/react-native-bottom-sheet/commit/d1ecb186b6d9ea94039f77ef4ab88a5d57726b14)).
+
+## [v2.4.0](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.3.0...v2.4.0) - 2021-06-16
 
 #### Features
 
