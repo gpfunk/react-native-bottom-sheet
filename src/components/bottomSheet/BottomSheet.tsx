@@ -225,6 +225,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
 
       // call the callbacks
       handlePanGestureHandler.onGestureEvent(ev);
+      handlePanGestureHandler.onHandlerStateChange(ev);
     };
 
     const {
@@ -664,9 +665,8 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
                   enableHandlePanningGesture={enableHandlePanningGesture}
                   handleComponent={handleComponent}
                   onMeasureHeight={handleOnHandleMeasureHeight}
-                  {...handlePanGestureHandler}
-                  // overwrite this to allow for passing back to calling fn
                   onGestureEvent={onPanGestureHandler}
+                  onHandlerStateChange={onPanGestureHandler}
                 />
                 <Animated.View
                   pointerEvents="box-none"
