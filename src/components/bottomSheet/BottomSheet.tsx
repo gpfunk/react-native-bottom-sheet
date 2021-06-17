@@ -218,12 +218,12 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
     } = usePanGestureHandler();
 
     useCode(() => {
-      return call([handlePanGestureTranslationY], (y) => {
+      return call([handlePanGestureTranslationY, currentIndexRef.current], (y) => {
         if (_providedOnPan) {
           _providedOnPan(y);
         }
       });
-    }, [handlePanGestureTranslationY, _providedOnPan]);
+    }, [handlePanGestureTranslationY]);
 
     const {
       state: contentPanGestureState,
