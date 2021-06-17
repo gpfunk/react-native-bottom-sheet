@@ -217,14 +217,6 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       gestureHandler: handlePanGestureHandler,
     } = usePanGestureHandler();
 
-    useCode(() => {
-      return call([handlePanGestureTranslationY, currentIndexRef.current], (y) => {
-        if (_providedOnPan) {
-          _providedOnPan(y);
-        }
-      });
-    }, [handlePanGestureTranslationY]);
-
     const {
       state: contentPanGestureState,
       translation: { y: contentPanGestureTranslationY },
@@ -299,6 +291,14 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
         ),
       [safeContainerHeight, position, animatedIsLayoutReady]
     );
+
+    useCode(() => {
+      return call([animatedPosition], (y) => {
+        if (_providedOnPan) {
+          _providedOnPan(y);
+        }
+      });
+    }, [animatedPosition, _providedOnPan]);
 
     /**
      * Scrollable animated props.
