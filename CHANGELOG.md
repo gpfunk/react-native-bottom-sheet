@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.4.2](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.1...v2.4.2)
+## [v2.4.3](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.2...v2.4.3)
+
+#### Fixes
+
+- fix: we switching it up again ([2d2dcef](https://github.com/gpfunk/react-native-bottom-sheet/commit/2d2dcefd53b5009db9f9ddd6c272ea3ca1ca9d21)).
+
+## [v2.4.2](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.1...v2.4.2) - 2021-06-17
 
 #### Fixes
 
