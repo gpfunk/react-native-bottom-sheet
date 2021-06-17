@@ -26,11 +26,10 @@ import Animated, {
   abs,
   greaterThan,
 } from 'react-native-reanimated';
-import { PanGestureHandlerEventPayload, GestureHandlerStateChangeNativeEvent, State, TapGestureHandler } from 'react-native-gesture-handler';
+import { State, TapGestureHandler } from 'react-native-gesture-handler';
 import {
-  useConst,
+  usePanGestureHandler,
   useTapGestureHandler,
-  vec,
 } from 'react-native-redash';
 import BottomSheetDraggableView from '../bottomSheetDraggableView';
 import BottomSheetContentWrapper from '../bottomSheetContentWrapper';
@@ -76,52 +75,6 @@ type BottomSheet = BottomSheetMethods;
 Animated.addWhitelistedUIProps({
   decelerationRate: true,
 });
-
-type NativeEvent = GestureHandlerStateChangeNativeEvent &
-  (
-    PanGestureHandlerEventPayload
-  );
-
-type Adaptable<T> = { [P in keyof T]: Animated.Adaptable<T[P]> };
-
-export const onGestureEvent = (
-  nativeEvent: Partial<Adaptable<NativeEvent>>,
-  listener?: any,
-) => {
-  const gestureEvent = Animated.event([{ nativeEvent }], { listener });
-
-  return {
-    onHandlerStateChange: gestureEvent,
-    onGestureEvent: gestureEvent,
-  };
-};
-
-export const panGestureHandler = (listener: any) => {
-  const position = vec.createValue(0);
-  const translation = vec.createValue(0);
-  const velocity = vec.createValue(0);
-  const state = new Animated.Value(State.UNDETERMINED);
-
-  const gestureHandler = onGestureEvent({
-    x: position.x,
-    translationX: translation.x,
-    velocityX: velocity.x,
-    y: position.y,
-    translationY: translation.y,
-    velocityY: velocity.y,
-    state,
-  }, listener);
-
-  return {
-    position,
-    translation,
-    velocity,
-    state,
-    gestureHandler,
-  };
-};
-
-const usePanGestureHandler = (listener?: any) => useConst(() => panGestureHandler(listener));
 
 const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
   (props, ref) => {
@@ -262,7 +215,15 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       translation: { y: handlePanGestureTranslationY },
       velocity: { y: handlePanGestureVelocityY },
       gestureHandler: handlePanGestureHandler,
-    } = usePanGestureHandler(_providedOnPan);
+    } = usePanGestureHandler();
+
+    useCode(() => {
+      return call([handlePanGestureTranslationY], (y) => {
+        if (_providedOnPan) {
+          _providedOnPan(y);
+        }
+      });
+    }, [handlePanGestureTranslationY]);
 
     const {
       state: contentPanGestureState,
