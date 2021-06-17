@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.4.3](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.2...v2.4.3)
+## [v2.4.4](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.3...v2.4.4)
+
+#### Fixes
+
+- fix: add fn as a dep ([1b4d53d](https://github.com/gpfunk/react-native-bottom-sheet/commit/1b4d53d28954c73f1ad73b1ce9c8f864028def16)).
+
+## [v2.4.3](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.2...v2.4.3) - 2021-06-17
 
 #### Fixes
 
