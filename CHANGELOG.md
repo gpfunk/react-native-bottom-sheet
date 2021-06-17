@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.4.1](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.0...v2.4.1)
+## [v2.4.2](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.1...v2.4.2)
+
+#### Fixes
+
+- fix: add listener to pan event ([8b82634](https://github.com/gpfunk/react-native-bottom-sheet/commit/8b826347059bdd378033321d7c21afb96191190c)).
+
+## [v2.4.1](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.0...v2.4.1) - 2021-06-17
 
 #### Fixes
 
