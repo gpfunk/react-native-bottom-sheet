@@ -223,7 +223,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
           _providedOnPan(y);
         }
       });
-    }, [handlePanGestureTranslationY]);
+    }, [handlePanGestureTranslationY, _providedOnPan]);
 
     const {
       state: contentPanGestureState,
