@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.4.4](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.3...v2.4.4)
+## [v2.4.5](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.4...v2.4.5)
+
+#### Fixes
+
+- fix: pass thru index ([dfa5a2c](https://github.com/gpfunk/react-native-bottom-sheet/commit/dfa5a2c0dc6c10bf5e3efb1b32f8296fc3a7b7f5)).
+
+## [v2.4.4](https://github.com/gpfunk/react-native-bottom-sheet/compare/v2.4.3...v2.4.4) - 2021-06-17
 
 #### Fixes
 
